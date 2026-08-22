@@ -1,4 +1,4 @@
-# Ahmed Al-Qasabi - Portfolio
+# Ahmed Alqassabi - Portfolio
 
 Personal portfolio website showcasing my projects and skills in embedded systems and software engineering.
 
