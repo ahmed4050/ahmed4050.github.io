@@ -1,0 +1,178 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ahmed Al-Qasabi | Embedded Systems & Software Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+:root{--bg:#0a0e17;--bg2:#111827;--card:#1a2332;--accent:#3b82f6;--accent2:#60a5fa;--green:#10b981;--purple:#8b5cf6;--t1:#f1f5f9;--t2:#94a3b8;--t3:#64748b;--brd:rgba(255,255,255,.06);--g1:linear-gradient(135deg,#3b82f6,#8b5cf6);--g2:linear-gradient(135deg,#10b981,#3b82f6)}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'Tajawal',sans-serif;background:var(--bg);color:var(--t1);line-height:1.7;overflow-x:hidden}
+a{color:inherit;text-decoration:none}.container{max-width:1200px;margin:0 auto;padding:0 30px}
+section{padding:100px 0}.fade-in{opacity:0;transform:translateY(30px);transition:all .6s ease}.fade-in.visible{opacity:1;transform:translateY(0)}
+.navbar{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(10,14,23,.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--brd);padding:15px 0;transition:all .3s}
+.navbar.scrolled{padding:10px 0;background:rgba(10,14,23,.95)}
+.nav-container{max-width:1200px;margin:0 auto;padding:0 30px;display:flex;justify-content:space-between;align-items:center}
+.nav-logo{font-size:1.3rem;font-weight:800;display:flex;align-items:center;gap:10px}
+.logo-icon{width:40px;height:40px;background:var(--g1);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1rem;color:#fff}
+.nav-links{display:flex;gap:25px;list-style:none}
+.nav-links a{color:var(--t2);font-size:.95rem;font-weight:500;transition:color .3s}.nav-links a:hover{color:var(--accent2)}
+.nav-hamburger{display:none;background:none;border:none;color:var(--t1);font-size:1.5rem;cursor:pointer}
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:120px 30px 80px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-50%;right:-30%;width:800px;height:800px;background:radial-gradient(circle,rgba(59,130,246,.15),transparent 70%);border-radius:50%;animation:glow 8s ease-in-out infinite}
+.hero::after{content:'';position:absolute;bottom:-30%;left:-20%;width:600px;height:600px;background:radial-gradient(circle,rgba(139,92,246,.1),transparent 70%);border-radius:50%;animation:glow 10s ease-in-out infinite reverse}
+@keyframes glow{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(30px,-20px) scale(1.1)}}
+.hero-content{position:relative;z-index:1;text-align:center;max-width:900px}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.2);color:var(--accent2);padding:8px 20px;border-radius:50px;font-size:.9rem;margin-bottom:25px}
+.hero-badge .dot{width:8px;height:8px;background:var(--green);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+.hero h1{font-size:clamp(2.5rem,6vw,4.5rem);font-weight:900;line-height:1.2;margin-bottom:10px}
+.gradient-text{background:var(--g1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero .subtitle{font-size:clamp(1.1rem,2.5vw,1.5rem);color:var(--t2);margin-bottom:20px}
+.hero .desc{font-size:1.05rem;color:var(--t3);max-width:700px;margin:0 auto 35px}
+.hero-buttons{display:flex;gap:15px;justify-content:center;flex-wrap:wrap}
+.btn{padding:12px 30px;border-radius:12px;font-size:1rem;font-weight:600;font-family:inherit;cursor:pointer;transition:all .3s;display:inline-flex;align-items:center;gap:10px;border:none}
+.btn-primary{background:var(--g1);color:#fff;box-shadow:0 4px 20px rgba(59,130,246,.3)}.btn-primary:hover{transform:translateY(-2px);box-shadow:0 6px 25px rgba(59,130,246,.5)}
+.btn-outline{background:transparent;color:var(--t1);border:2px solid var(--brd)}.btn-outline:hover{border-color:var(--accent);color:var(--accent2);transform:translateY(-2px)}
+.hero-stats{display:flex;justify-content:center;gap:50px;margin-top:60px}.stat{text-align:center}
+.stat-number{font-size:2.5rem;font-weight:900;background:var(--g1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.stat-label{font-size:.85rem;color:var(--t3);margin-top:5px}
+.section-header{text-align:center;margin-bottom:60px}
+.section-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.15);color:var(--accent2);padding:6px 16px;border-radius:50px;font-size:.85rem;margin-bottom:15px}
+.section-title{font-size:clamp(2rem,4vw,3rem);font-weight:800;margin-bottom:15px}
+.section-sub{color:var(--t3);font-size:1.05rem;max-width:600px;margin:0 auto}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:25px}
+.skill-card{background:var(--card);border:1px solid var(--brd);border-radius:16px;padding:30px;transition:all .3s;position:relative;overflow:hidden}
+.skill-card:hover{transform:translateY(-5px);border-color:rgba(59,130,246,.3);box-shadow:0 10px 40px rgba(0,0,0,.3)}
+.skill-card::before{content:'';position:absolute;top:0;right:0;width:100%;height:3px}
+.skill-card.blue::before{background:var(--g1)}.skill-card.purple::before{background:linear-gradient(135deg,#8b5cf6,#ec4899)}.skill-card.green::before{background:var(--g2)}
+.skill-icon{width:50px;height:50px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;color:#fff;margin-bottom:15px}
+.skill-card.blue .skill-icon{background:linear-gradient(135deg,#3b82f6,#2563eb)}.skill-card.purple .skill-icon{background:linear-gradient(135deg,#8b5cf6,#7c3aed)}.skill-card.green .skill-icon{background:linear-gradient(135deg,#10b981,#059669)}
+.skill-card h3{font-size:1.3rem;font-weight:700;margin-bottom:12px}
+.skill-tags{display:flex;flex-wrap:wrap;gap:8px}
+.skill-tag{background:rgba(255,255,255,.05);border:1px solid var(--brd);padding:5px 14px;border-radius:20px;font-size:.85rem;color:var(--t2);font-family:'Fira Code',monospace;transition:all .3s}
+.skill-tag:hover{border-color:var(--accent);color:var(--accent2);background:rgba(59,130,246,.1)}
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:25px}
+.project-card{background:var(--card);border:1px solid var(--brd);border-radius:16px;overflow:hidden;transition:all .3s}
+.project-card:hover{transform:translateY(-5px);border-color:rgba(59,130,246,.3);box-shadow:0 10px 40px rgba(0,0,0,.3)}
+.project-img{height:180px;display:flex;align-items:center;justify-content:center;font-size:3rem;position:relative;overflow:hidden}
+.project-img.blue{background:linear-gradient(135deg,rgba(59,130,246,.15),rgba(139,92,246,.1))}
+.project-img.green{background:linear-gradient(135deg,rgba(16,185,129,.15),rgba(59,130,246,.1))}
+.project-img.purple{background:linear-gradient(135deg,rgba(139,92,246,.15),rgba(236,72,153,.1))}
+.project-body{padding:25px}.project-body h3{font-size:1.2rem;font-weight:700;margin-bottom:10px}
+.project-body p{color:var(--t3);font-size:.95rem;margin-bottom:15px;line-height:1.6}
+.project-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:15px}
+.project-tags span{background:rgba(59,130,246,.1);color:var(--accent2);padding:4px 12px;border-radius:15px;font-size:.8rem}
+.project-link{display:inline-flex;align-items:center;gap:6px;color:var(--accent2);font-weight:600;font-size:.95rem;transition:all .3s}.project-link:hover{gap:10px}
+.exp-list{max-width:800px;margin:0 auto}
+.exp-item{background:var(--card);border:1px solid var(--brd);border-radius:16px;padding:30px;margin-bottom:25px;transition:all .3s;position:relative;overflow:hidden}
+.exp-item:hover{border-color:rgba(59,130,246,.3);transform:translateY(-3px);box-shadow:0 10px 40px rgba(0,0,0,.3)}
+.exp-item::before{content:'';position:absolute;top:0;right:0;width:4px;height:100%;background:var(--g1)}
+.exp-item .tag{display:inline-block;background:rgba(59,130,246,.1);color:var(--accent2);padding:4px 12px;border-radius:15px;font-size:.8rem;margin-bottom:10px}
+.exp-item h3{font-size:1.2rem;font-weight:700;margin-bottom:5px}
+.exp-item .org{color:var(--accent2);font-size:.95rem;margin-bottom:5px}
+.exp-item .date{color:var(--t3);font-size:.85rem;margin-bottom:12px}
+.exp-item ul{list-style:none;margin-top:10px}
+.exp-item ul li{color:var(--t3);font-size:.9rem;padding:6px 0 6px 20px;position:relative}
+.exp-item ul li::before{content:'';position:absolute;left:0;top:13px;width:8px;height:8px;background:var(--accent);border-radius:50%}
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px;max-width:800px;margin:0 auto}
+.contact-card{background:var(--card);border:1px solid var(--brd);border-radius:16px;padding:30px;text-align:center;transition:all .3s}
+.contact-card:hover{transform:translateY(-5px);border-color:rgba(59,130,246,.3);box-shadow:0 10px 40px rgba(0,0,0,.3)}
+.contact-icon{width:60px;height:60px;background:var(--g1);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;color:#fff;margin:0 auto 15px}
+.contact-card h3{font-size:1.1rem;font-weight:700;margin-bottom:5px}
+.contact-card p{color:var(--t3);font-size:.9rem}
+.contact-card a{color:var(--accent2);font-weight:600}
+footer{text-align:center;padding:30px;border-top:1px solid var(--brd);color:var(--t3);font-size:.9rem}
+@media(max-width:768px){.nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:rgba(10,14,23,.95);backdrop-filter:blur(20px);flex-direction:column;padding:20px;gap:15px;border-bottom:1px solid var(--brd)}.nav-links.active{display:flex}.nav-hamburger{display:block}.hero-stats{gap:25px}.stat-number{font-size:1.8rem}.skills-grid,.projects-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav class="navbar" id="navbar"><div class="nav-container">
+<a href="#" class="nav-logo"><div class="logo-icon"><i class="fas fa-microchip"></i></div><span>Ahmed Al-Qasabi</span></a>
+<ul class="nav-links" id="navLinks">
+<li><a href="#hero">الرئيسية</a></li><li><a href="#skills">المهارات</a></li><li><a href="#projects">المشاريع</a></li><li><a href="#experience">الخبرة</a></li><li><a href="#contact">التواصل</a></li>
+</ul>
+<button class="nav-hamburger" id="hamburger"><i class="fas fa-bars"></i></button>
+</div></nav>
+
+<section class="hero" id="hero"><div class="hero-content">
+<div class="hero-badge"><span class="dot"></span> متاح للعمل</div>
+<h1>أحمد <span class="gradient-text">القصابي</span></h1>
+<p class="subtitle">مطور أنظمة مدمجة ومهندس برمجيات</p>
+<p class="desc">متخصص في دمج العتاد بالبرمجيات، تطوير أنظمة التحكم الذكية، وأتمتة الحلول التقنية. خريج جامعة كوفنتري البريطانية - ماجستير هندسة علوم الحاسب.</p>
+<div class="hero-buttons">
+<a href="mailto:ahmed4050@gmail.com" class="btn btn-primary"><i class="fas fa-envelope"></i> تواصل معي</a>
+<a href="#" class="btn btn-outline"><i class="fas fa-download"></i> تحميل السيرة الذاتية</a>
+</div>
+<div class="hero-stats">
+<div class="stat"><div class="stat-number" data-target="50">0</div><div class="stat-label">مشروع مكتمل</div></div>
+<div class="stat"><div class="stat-number" data-target="5">0</div><div class="stat-label">سنوات خبرة</div></div>
+<div class="stat"><div class="stat-number" data-target="1">0</div><div class="stat-label">ماجستير هندسة</div></div>
+</div></div></section>
+
+<section id="skills"><div class="container">
+<div class="section-header fade-in">
+<div class="section-tag"><i class="fas fa-code"></i> المهارات</div>
+<h2 class="section-title">المهارات <span class="gradient-text">والتقنيات</span></h2>
+<p class="section-sub">مجموعة متنوعة من المهارات التقنية المكتسبة عبر التعليم والخبرة العملية</p>
+</div>
+<div class="skills-grid">
+<div class="skill-card blue fade-in"><div class="skill-icon"><i class="fas fa-microchip"></i></div><h3>الأنظمة المدمجة والإلكترونيات</h3><div class="skill-tags"><span class="skill-tag">C/C++</span><span class="skill-tag">Arduino</span><span class="skill-tag">ESP32</span><span class="skill-tag">Raspberry Pi</span><span class="skill-tag">IoT</span><span class="skill-tag">Sensors</span><span class="skill-tag">Circuit Design</span><span class="skill-tag">PlatformIO</span></div></div>
+<div class="skill-card purple fade-in"><div class="skill-icon"><i class="fas fa-laptop-code"></i></div><h3>البرمجيات وتطوير الحلول</h3><div class="skill-tags"><span class="skill-tag">Python</span><span class="skill-tag">JavaScript</span><span class="skill-tag">HTML/CSS</span><span class="skill-tag">Git/GitHub</span><span class="skill-tag">Web Dev</span><span class="skill-tag">API</span></div></div>
+<div class="skill-card green fade-in"><div class="skill-icon"><i class="fas fa-cogs"></i></div><h3>أتمتة الأعمال وقواعد البيانات</h3><div class="skill-tags"><span class="skill-tag">Power Apps</span><span class="skill-tag">Power Automate</span><span class="skill-tag">SharePoint</span><span class="skill-tag">SQL</span><span class="skill-tag">Microsoft 365</span></div></div>
+</div></div></section>
+
+<section id="projects"><div class="container">
+<div class="section-header fade-in">
+<div class="section-tag"><i class="fas fa-rocket"></i> المشاريع</div>
+<h2 class="section-title">معرض <span class="gradient-text">المشاريع</span></h2>
+<p class="section-sub">أبرز المشاريع التي عملت عليها</p>
+</div>
+<div class="projects-grid">
+<div class="project-card fade-in"><div class="project-img blue"><i class="fas fa-flask"></i></div><div class="project-body"><h3>نظام حجوزات المختبر</h3><p>نظام ذكي لحجز المختبرات يعتمد على Google Sheets كقاعدة بيانات مع واجهة تفاعلية تسمح بالحجز ومتابعة الحصص في الوقت الفعلي.</p><div class="project-tags"><span>JavaScript</span><span>HTML/CSS</span><span>Google Sheets API</span></div><a href="https://ahmed4050.github.io/LAB_BOOKING2/" class="project-link"><i class="fas fa-external-link-alt"></i> عرض مباشر</a></div></div>
+<div class="project-card fade-in"><div class="project-img green"><i class="fas fa-home"></i></div><div class="project-body"><h3>لوحة تحكم ذكية للمنازل</h3><p>نظام IoT للتحكم في أجهزة المنزل الذكي مع ESP32 ومستشعرات متعددة مع لوحة تحكم ويب تفاعلية.</p><div class="project-tags"><span>ESP32</span><span>Python</span><span>IoT</span><span>Web Dashboard</span></div><a href="https://github.com/ahmed4050" class="project-link"><i class="fab fa-github"></i> GitHub</a></div></div>
+<div class="project-card fade-in"><div class="project-img purple"><i class="fas fa-robot"></i></div><div class="project-body"><h3>نظام أتمتة المختبر</h3><p>نظام أتمتة متكامل للمختبرات يشمل التحكم في الإضاءة والتكييف والموارد عبر لوحة تحكم مركزية.</p><div class="project-tags"><span>Arduino</span><span>C++</span><span>Sensors</span><span>Automation</span></div><a href="https://github.com/ahmed4050" class="project-link"><i class="fab fa-github"></i> GitHub</a></div></div>
+</div></div></section>
+
+<section id="experience"><div class="container">
+<div class="section-header fade-in">
+<div class="section-tag"><i class="fas fa-briefcase"></i> الخبرة</div>
+<h2 class="section-title">الخبرة <span class="gradient-text">والتعليم</span></h2>
+</div>
+<div class="exp-list">
+<div class="exp-item fade-in"><div class="tag"><i class="fas fa-briefcase"></i> خبرة عملية</div><h3>مطور أنظمة مدمجة ومهندس برمجيات</h3><div class="org">مشاريع مستقلة ومتنوعة</div><div class="date">2020 - حتى الآن</div><ul><li>تصميم وبرمجة أكثر من 50 مشروع طلابي في مراحل تعليمية مختلفة</li><li>تطوير حلول أتمتة ذكية للمختبرات والمشاريع الأكاديمية</li><li>حل مشاكل تقنية وفنية متقدمة في أنظمة العتاد والبرمجيات</li><li>بناء أنظمة IoT متكاملة مع واجهات ويب تفاعلية</li></ul></div>
+<div class="exp-item fade-in"><div class="tag"><i class="fas fa-graduation-cap"></i> شهادة أكاديمية</div><h3>ماجستير هندسة علوم الحاسب</h3><div class="org">Coventry University - المملكة المتحدة</div><div class="date">جامعة كوفنتري البريطانية</div><ul><li>تخصص في هندسة علوم الحاسب الآلي</li><li>بحث في مجالات الأنظمة المدمجة والتحكم الذكي</li></ul></div>
+</div></div></section>
+
+<section id="contact"><div class="container">
+<div class="section-header fade-in">
+<div class="section-tag"><i class="fas fa-paper-plane"></i> التواصل</div>
+<h2 class="section-title">تواصل <span class="gradient-text">معي</span></h2>
+<p class="section-sub">لا تتردد في التواصل معي لأي استفسار أو تعاون</p>
+</div>
+<div class="contact-grid">
+<div class="contact-card fade-in"><div class="contact-icon"><i class="fas fa-envelope"></i></div><h3>البريد الإلكتروني</h3><p><a href="mailto:ahmed4050@gmail.com">ahmed4050@gmail.com</a></p></div>
+<div class="contact-card fade-in"><div class="contact-icon"><i class="fab fa-github"></i></div><h3>GitHub</h3><p><a href="https://github.com/ahmed4050" target="_blank">ahmed4050</a></p></div>
+<div class="contact-card fade-in"><div class="contact-icon"><i class="fab fa-linkedin"></i></div><h3>LinkedIn</h3><p><a href="https://linkedin.com" target="_blank">LinkedIn Profile</a></p></div>
+</div></div></section>
+
+<footer><div class="container"><p>جميع الحقوق محفوظة 2026 - أحمد محمد القصابي</p></div></footer>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+var navbar=document.getElementById('navbar');
+var hamburger=document.getElementById('hamburger');
+var navLinks=document.getElementById('navLinks');
+window.addEventListener('scroll',function(){navbar.classList.toggle('scrolled',window.scrollY>50);});
+hamburger.addEventListener('click',function(){navLinks.classList.toggle('active');});
+navLinks.querySelectorAll('a').forEach(function(l){l.addEventListener('click',function(){navLinks.classList.remove('active');});});
+var obs=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting)x.target.classList.add('visible');});},{threshold:0.1});
+document.querySelectorAll('.fade-in').forEach(function(el){obs.observe(el);});
+var cobs=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){var el=x.target;var t=+el.getAttribute('data-target');var c=0;var step=Math.ceil(t/50);var iv=setInterval(function(){c+=step;if(c>=t){c=t;clearInterval(iv);}el.textContent=c;},30);cobs.unobserve(el);}});},{threshold:0.5});
+document.querySelectorAll('.stat-number').forEach(function(el){cobs.observe(el);});
+});
+</script>
+</body>
+</html>
