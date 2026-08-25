@@ -5,12 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ahmed Alqassabi | Embedded Systems & Software Engineer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Fira+Code:wght@400;500;600&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
 :root{--bg:#0a0e17;--bg2:#111827;--card:#1a2332;--accent:#3b82f6;--accent2:#60a5fa;--green:#10b981;--purple:#8b5cf6;--t1:#f1f5f9;--t2:#94a3b8;--t3:#64748b;--brd:rgba(255,255,255,.06);--g1:linear-gradient(135deg,#3b82f6,#8b5cf6);--g2:linear-gradient(135deg,#10b981,#3b82f6)}
 *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
 body{font-family:'Tajawal',sans-serif;background:var(--bg);color:var(--t1);line-height:1.7;overflow-x:hidden}
+body.lang-en{font-family:'Inter',sans-serif}
 a{color:inherit;text-decoration:none}.container{max-width:1200px;margin:0 auto;padding:0 30px}
 section{padding:100px 0}.fade-in{opacity:0;transform:translateY(30px);transition:all .6s ease}.fade-in.visible{opacity:1;transform:translateY(0)}
 .navbar{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(10,14,23,.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--brd);padding:15px 0;transition:all .3s}
@@ -20,6 +21,9 @@ section{padding:100px 0}.fade-in{opacity:0;transform:translateY(30px);transition
 .logo-icon{width:40px;height:40px;background:var(--g1);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1rem;color:#fff}
 .nav-links{display:flex;gap:25px;list-style:none}
 .nav-links a{color:var(--t2);font-size:.95rem;font-weight:500;transition:color .3s}.nav-links a:hover{color:var(--accent2)}
+.nav-right{display:flex;align-items:center;gap:15px}
+.lang-toggle{background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.2);color:var(--accent2);padding:6px 14px;border-radius:8px;font-size:.85rem;font-weight:600;cursor:pointer;transition:all .3s;font-family:inherit;display:flex;align-items:center;gap:6px}
+.lang-toggle:hover{background:rgba(59,130,246,.2);border-color:rgba(59,130,246,.4)}
 .nav-hamburger{display:none;background:none;border:none;color:var(--t1);font-size:1.5rem;cursor:pointer}
 .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:120px 30px 80px;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;top:-50%;right:-30%;width:800px;height:800px;background:radial-gradient(circle,rgba(59,130,246,.15),transparent 70%);border-radius:50%;animation:glow 8s ease-in-out infinite}
@@ -80,7 +84,9 @@ section{padding:100px 0}.fade-in{opacity:0;transform:translateY(30px);transition
 .exp-item .date{color:var(--t3);font-size:.85rem;margin-bottom:12px}
 .exp-item ul{list-style:none;margin-top:10px}
 .exp-item ul li{color:var(--t3);font-size:.9rem;padding:6px 0 6px 20px;position:relative}
+body:not(.lang-en) .exp-item ul li{padding:6px 20px 6px 0}
 .exp-item ul li::before{content:'';position:absolute;left:0;top:13px;width:8px;height:8px;background:var(--accent);border-radius:50%}
+body:not(.lang-en) .exp-item ul li::before{left:auto;right:0}
 .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px;max-width:800px;margin:0 auto}
 .contact-card{background:var(--card);border:1px solid var(--brd);border-radius:16px;padding:30px;text-align:center;transition:all .3s}
 .contact-card:hover{transform:translateY(-5px);border-color:rgba(59,130,246,.3);box-shadow:0 10px 40px rgba(0,0,0,.3)}
@@ -96,79 +102,147 @@ footer{text-align:center;padding:30px;border-top:1px solid var(--brd);color:var(
 <nav class="navbar" id="navbar"><div class="nav-container">
 <a href="#" class="nav-logo"><div class="logo-icon"><i class="fas fa-microchip"></i></div><span>Ahmed Alqassabi</span></a>
 <ul class="nav-links" id="navLinks">
-<li><a href="#hero">الرئيسية</a></li><li><a href="#skills">المهارات</a></li><li><a href="#projects">المشاريع</a></li><li><a href="#experience">الخبرة</a></li><li><a href="#contact">التواصل</a></li>
+<li><a href="#hero" data-i18n="nav_home">الرئيسية</a></li><li><a href="#skills" data-i18n="nav_skills">المهارات</a></li><li><a href="#projects" data-i18n="nav_projects">المشاريع</a></li><li><a href="#experience" data-i18n="nav_experience">الخبرة</a></li><li><a href="#contact" data-i18n="nav_contact">التواصل</a></li>
 </ul>
+<div class="nav-right">
+<button class="lang-toggle" id="langToggle" onclick="toggleLang()"><i class="fas fa-globe"></i><span id="langLabel">EN</span></button>
 <button class="nav-hamburger" id="hamburger"><i class="fas fa-bars"></i></button>
+</div>
 </div></nav>
 
 <section class="hero" id="hero"><div class="hero-content">
-<div class="hero-badge"><span class="dot"></span> متاح للعمل</div>
-<h1>أحمد <span class="gradient-text">القصابي</span></h1>
-<p class="subtitle">مطور أنظمة مدمجة ومهندس برمجيات</p>
-<p class="desc">متخصص في دمج العتاد بالبرمجيات، تطوير أنظمة التحكم الذكية، وأتمتة الحلول التقنية. خريج جامعة كوفنتري البريطانية - ماجستير هندسة علوم الحاسب.</p>
+<div class="hero-badge"><span class="dot"></span> <span data-i18n="hero_badge">متاح للعمل</span></div>
+<h1 data-i18n="hero_name">أحمد <span class="gradient-text">القصابي</span></h1>
+<p class="subtitle" data-i18n="hero_subtitle">مطور أنظمة مدمجة وهندسة برمجيات</p>
+<p class="desc" data-i18n="hero_desc">متخصص في دمج العتاد بالبرمجيات، تطوير أنظمة التحكم الذكية، وأتمتة الحلول التقنية. خريج جامعة كوفنتري البريطانية - ماجستير هندسة علوم الحاسب.</p>
 <div class="hero-buttons">
-<a href="mailto:ahmed4050@gmail.com" class="btn btn-primary"><i class="fas fa-envelope"></i> تواصل معي</a>
-<a href="#" class="btn btn-outline"><i class="fas fa-download"></i> تحميل السيرة الذاتية</a>
+<a href="mailto:ahmed4050@gmail.com" class="btn btn-primary"><i class="fas fa-envelope"></i> <span data-i18n="hero_btn_contact">تواصل معي</span></a>
+<a href="#" class="btn btn-outline"><i class="fas fa-download"></i> <span data-i18n="hero_btn_cv">تحميل السيرة الذاتية</span></a>
 </div>
 <div class="hero-stats">
-<div class="stat"><div class="stat-number" data-target="50">0</div><div class="stat-label">مشروع مكتمل</div></div>
-<div class="stat"><div class="stat-number" data-target="5">0</div><div class="stat-label">سنوات خبرة</div></div>
-<div class="stat"><div class="stat-number" data-target="1">0</div><div class="stat-label">ماجستير هندسة</div></div>
+<div class="stat"><div class="stat-number" data-target="50">0</div><div class="stat-label" data-i18n="stat_projects">مشروع مكتمل</div></div>
+<div class="stat"><div class="stat-number" data-target="5">0</div><div class="stat-label" data-i18n="stat_years">سنوات خبرة</div></div>
+<div class="stat"><div class="stat-number" data-target="1">0</div><div class="stat-label" data-i18n="stat_degree">ماجستير هندسة</div></div>
 </div></div></section>
 
 <section id="skills"><div class="container">
 <div class="section-header fade-in">
-<div class="section-tag"><i class="fas fa-code"></i> المهارات</div>
-<h2 class="section-title">المهارات <span class="gradient-text">والتقنيات</span></h2>
-<p class="section-sub">مجموعة متنوعة من المهارات التقنية المكتسبة عبر التعليم والخبرة العملية</p>
+<div class="section-tag"><i class="fas fa-code"></i> <span data-i18n="skills_tag">المهارات</span></div>
+<h2 class="section-title"><span data-i18n="skills_title_1">المهارات</span> <span class="gradient-text" data-i18n="skills_title_2">والتقنيات</span></h2>
+<p class="section-sub" data-i18n="skills_sub">مجموعة متنوعة من المهارات التقنية المكتسبة عبر التعليم والخبرة العملية</p>
 </div>
 <div class="skills-grid">
-<div class="skill-card blue fade-in"><div class="skill-icon"><i class="fas fa-microchip"></i></div><h3>الأنظمة المدمجة والإلكترونيات</h3><div class="skill-tags"><span class="skill-tag">C/C++</span><span class="skill-tag">Arduino</span><span class="skill-tag">ESP32</span><span class="skill-tag">Raspberry Pi</span><span class="skill-tag">IoT</span><span class="skill-tag">Sensors</span><span class="skill-tag">Circuit Design</span><span class="skill-tag">PlatformIO</span></div></div>
-<div class="skill-card purple fade-in"><div class="skill-icon"><i class="fas fa-laptop-code"></i></div><h3>البرمجيات وتطوير الحلول</h3><div class="skill-tags"><span class="skill-tag">Python</span><span class="skill-tag">JavaScript</span><span class="skill-tag">HTML/CSS</span><span class="skill-tag">Git/GitHub</span><span class="skill-tag">Web Dev</span><span class="skill-tag">API</span></div></div>
-<div class="skill-card green fade-in"><div class="skill-icon"><i class="fas fa-cogs"></i></div><h3>أتمتة الأعمال وقواعد البيانات</h3><div class="skill-tags"><span class="skill-tag">Power Apps</span><span class="skill-tag">Power Automate</span><span class="skill-tag">SharePoint</span><span class="skill-tag">SQL</span><span class="skill-tag">Microsoft 365</span></div></div>
+<div class="skill-card blue fade-in"><div class="skill-icon"><i class="fas fa-microchip"></i></div><h3 data-i18n="skill1_title">الأنظمة المدمجة والإلكترونيات</h3><div class="skill-tags"><span class="skill-tag">C/C++</span><span class="skill-tag">Arduino</span><span class="skill-tag">ESP32</span><span class="skill-tag">Raspberry Pi</span><span class="skill-tag">IoT</span><span class="skill-tag">Sensors</span><span class="skill-tag">Circuit Design</span><span class="skill-tag">PlatformIO</span></div></div>
+<div class="skill-card purple fade-in"><div class="skill-icon"><i class="fas fa-laptop-code"></i></div><h3 data-i18n="skill2_title">البرمجيات وتطوير الحلول</h3><div class="skill-tags"><span class="skill-tag">Python</span><span class="skill-tag">JavaScript</span><span class="skill-tag">HTML/CSS</span><span class="skill-tag">Git/GitHub</span><span class="skill-tag">Web Dev</span><span class="skill-tag">API</span></div></div>
+<div class="skill-card green fade-in"><div class="skill-icon"><i class="fas fa-cogs"></i></div><h3 data-i18n="skill3_title">أتمتة الأعمال وقواعد البيانات</h3><div class="skill-tags"><span class="skill-tag">Power Apps</span><span class="skill-tag">Power Automate</span><span class="skill-tag">SharePoint</span><span class="skill-tag">SQL</span><span class="skill-tag">Microsoft 365</span></div></div>
 </div></div></section>
 
 <section id="projects"><div class="container">
 <div class="section-header fade-in">
-<div class="section-tag"><i class="fas fa-rocket"></i> المشاريع</div>
-<h2 class="section-title">معرض <span class="gradient-text">المشاريع</span></h2>
-<p class="section-sub">مشاريع حقيقية في الأنظمة المدمجة والويب</p>
+<div class="section-tag"><i class="fas fa-rocket"></i> <span data-i18n="projects_tag">المشاريع</span></div>
+<h2 class="section-title"><span data-i18n="projects_title_1">معرض</span> <span class="gradient-text" data-i18n="projects_title_2">المشاريع</span></h2>
+<p class="section-sub" data-i18n="projects_sub">مشاريع حقيقية في الأنظمة المدمجة والويب</p>
 </div>
 <div class="projects-grid">
-<div class="project-card fade-in"><div class="project-img blue"><i class="fas fa-flask"></i></div><div class="project-body"><h3>نظام حجوزات المختبر</h3><p>نظام ذكي لحجز المختبرات يعتمد على Google Sheets كقاعدة بيانات مع واجهة تفاعلية ومتابعة الحصص في الوقت الفعلي.</p><div class="project-tags"><span>JavaScript</span><span>HTML/CSS</span><span>Google Sheets API</span></div><a href="https://ahmed4050.github.io/LAB_BOOKING2/" class="project-link"><i class="fas fa-external-link-alt"></i> عرض مباشر</a></div></div>
-<div class="project-card fade-in"><div class="project-img green"><i class="fas fa-car"></i></div><div class="project-body"><h3>سيارة ESP32 بكاميرا WiFi</h3><p>روبوت سيارة مع كاميرا WiFi للتحكم عن بُعد عبر واجهة ويب مع بث مباشر للفيديو.</p><div class="project-tags"><span>ESP32</span><span>C++</span><span>WiFi Camera</span><span>Web Control</span></div><a href="https://github.com/ahmed4050/ESP32-WiFi-CAM-Robot-Car" class="project-link"><i class="fab fa-github"></i> GitHub</a></div></div>
-<div class="project-card fade-in"><div class="project-img purple"><i class="fas fa-robot"></i></div><div class="project-body"><h3>سيارة ESP32 ذكية ACEBOTT</h3><p>سيارة مدعومة بـ ESP32 مع تتبع مسار، مستشعر مسافة، تحكم عبر WebSocket، ولوحة تحكم تفاعلية.</p><div class="project-tags"><span>ESP32</span><span>C++</span><span>WebSocket</span><span>WiFiManager</span></div><a href="https://github.com/ahmed4050/ACEBOTT_ESP32_Car_Controll" class="project-link"><i class="fab fa-github"></i> GitHub</a></div></div>
-<div class="project-card fade-in"><div class="project-img orange"><i class="fas fa-compass"></i></div><div class="project-body"><h3>محدد اتجاه القبلة</h3><p>تطبيق ويب لتحديد اتجاه القبلة بدقة باستخدام GPS و compass API مع واجهة عربية.</p><div class="project-tags"><span>JavaScript</span><span>HTML/CSS</span><span>Geolocation API</span></div><a href="https://github.com/ahmed4050/Qibla-Direction-Finder" class="project-link"><i class="fab fa-github"></i> GitHub</a></div></div>
-<div class="project-card fade-in"><div class="project-img cyan"><i class="fas fa-newspaper"></i></div><div class="project-body"><h3>مجمع الأخبار</h3><p>موقع ويب يجمع الأخبار من مصادر RSS متعددة ويعرضها بتصميم عصري مع فلترة حسب التصنيف.</p><div class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>RSS Feed</span></div><a href="https://github.com/ahmed4050/news-aggregator" class="project-link"><i class="fab fa-github"></i> GitHub</a></div></div>
-<div class="project-card fade-in"><div class="project-img pink"><i class="fas fa-brain"></i></div><div class="project-body"><h3>موقع أخبار بالذكاء الاصطناعي</h3><p>منصة أخبار تستخدم الذكاء الاصطناعي لتصنيف وعرض المحتوى بتصميم تفاعلي.</p><div class="project-tags"><span>HTML</span><span>CSS</span><span>AI Integration</span></div><a href="https://github.com/ahmed4050/ai-news-website" class="project-link"><i class="fab fa-github"></i> GitHub</a></div></div>
-<div class="project-card fade-in"><div class="project-img blue"><i class="fas fa-cube"></i></div><div class="project-body"><h3>متتبع مكعب 3D</h3><p>تتبع مكعب ثلاثي الأبعاد في الوقت الفعلي باستخدام مستشعر 6-DOF على M5StickC Plus2.</p><div class="project-tags"><span>C++</span><span>M5StickC Plus2</span><span>6-DOF IMU</span><span>3D Graphics</span></div><a href="https://github.com/ahmed4050/M5StickC-Plus2-6DOF-3D-Cube-Tracker" class="project-link"><i class="fab fa-github"></i> GitHub</a></div></div>
+<div class="project-card fade-in"><div class="project-img blue"><i class="fas fa-flask"></i></div><div class="project-body"><h3 data-i18n="proj1_title">نظام حجوزات المختبر</h3><p data-i18n="proj1_desc">نظام ذكي لحجز المختبرات يعتمد على Google Sheets كقاعدة بيانات مع واجهة تفاعلية ومتابعة الحصص في الوقت الفعلي.</p><div class="project-tags"><span>JavaScript</span><span>HTML/CSS</span><span>Google Sheets API</span></div><a href="https://ahmed4050.github.io/LAB_BOOKING2/" class="project-link"><i class="fas fa-external-link-alt"></i> <span data-i18n="proj_view">عرض مباشر</span></a></div></div>
+<div class="project-card fade-in"><div class="project-img green"><i class="fas fa-car"></i></div><div class="project-body"><h3 data-i18n="proj2_title">سيارة ESP32 بكاميرا WiFi</h3><p data-i18n="proj2_desc">روبوت سيارة مع كاميرا WiFi للتحكم عن بُعد عبر واجهة ويب مع بث مباشر للفيديو.</p><div class="project-tags"><span>ESP32</span><span>C++</span><span>WiFi Camera</span><span>Web Control</span></div><a href="https://github.com/ahmed4050/ESP32-WiFi-CAM-Robot-Car" class="project-link"><i class="fab fa-github"></i> GitHub</a></div></div>
+<div class="project-card fade-in"><div class="project-img purple"><i class="fas fa-robot"></i></div><div class="project-body"><h3 data-i18n="proj3_title">سيارة ESP32 ذكية ACEBOTT</h3><p data-i18n="proj3_desc">سيارة مدعومة بـ ESP32 مع تتبع مسار، مستشعر مسافة، تحكم عبر WebSocket، ولوحة تحكم تفاعلية.</p><div class="project-tags"><span>ESP32</span><span>C++</span><span>WebSocket</span><span>WiFiManager</span></div><a href="https://github.com/ahmed4050/ACEBOTT_ESP32_Car_Controll" class="project-link"><i class="fab fa-github"></i> GitHub</a></div></div>
+<div class="project-card fade-in"><div class="project-img orange"><i class="fas fa-compass"></i></div><div class="project-body"><h3 data-i18n="proj4_title">محدد اتجاه القبلة</h3><p data-i18n="proj4_desc">تطبيق ويب لتحديد اتجاه القبلة بدقة باستخدام GPS و compass API مع واجهة عربية.</p><div class="project-tags"><span>JavaScript</span><span>HTML/CSS</span><span>Geolocation API</span></div><a href="https://github.com/ahmed4050/Qibla-Direction-Finder" class="project-link"><i class="fab fa-github"></i> GitHub</a></div></div>
+<div class="project-card fade-in"><div class="project-img cyan"><i class="fas fa-newspaper"></i></div><div class="project-body"><h3 data-i18n="proj5_title">مجمع الأخبار</h3><p data-i18n="proj5_desc">موقع ويب يجمع الأخبار من مصادر RSS متعددة ويعرضها بتصميم عصري مع فلترة حسب التصنيف.</p><div class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>RSS Feed</span></div><a href="https://github.com/ahmed4050/news-aggregator" class="project-link"><i class="fab fa-github"></i> GitHub</a></div></div>
+<div class="project-card fade-in"><div class="project-img pink"><i class="fas fa-brain"></i></div><div class="project-body"><h3 data-i18n="proj6_title">موقع أخبار بالذكاء الاصطناعي</h3><p data-i18n="proj6_desc">منصة أخبار تستخدم الذكاء الاصطناعي لتصنيف وعرض المحتوى بتصميم تفاعلي.</p><div class="project-tags"><span>HTML</span><span>CSS</span><span>AI Integration</span></div><a href="https://github.com/ahmed4050/ai-news-website" class="project-link"><i class="fab fa-github"></i> GitHub</a></div></div>
+<div class="project-card fade-in"><div class="project-img blue"><i class="fas fa-cube"></i></div><div class="project-body"><h3 data-i18n="proj7_title">متتبع مكعب 3D</h3><p data-i18n="proj7_desc">تتبع مكعب ثلاثي الأبعاد في الوقت الفعلي باستخدام مستشعر 6-DOF على M5StickC Plus2.</p><div class="project-tags"><span>C++</span><span>M5StickC Plus2</span><span>6-DOF IMU</span><span>3D Graphics</span></div><a href="https://github.com/ahmed4050/M5StickC-Plus2-6DOF-3D-Cube-Tracker" class="project-link"><i class="fab fa-github"></i> GitHub</a></div></div>
 </div></div></section>
 
 <section id="experience"><div class="container">
 <div class="section-header fade-in">
-<div class="section-tag"><i class="fas fa-briefcase"></i> الخبرة</div>
-<h2 class="section-title">الخبرة <span class="gradient-text">والتعليم</span></h2>
+<div class="section-tag"><i class="fas fa-briefcase"></i> <span data-i18n="exp_tag">الخبرة</span></div>
+<h2 class="section-title"><span data-i18n="exp_title_1">الخبرة</span> <span class="gradient-text" data-i18n="exp_title_2">والتعليم</span></h2>
 </div>
 <div class="exp-list">
-<div class="exp-item fade-in"><div class="tag"><i class="fas fa-briefcase"></i> خبرة عملية</div><h3>مطور أنظمة مدمجة ومهندس برمجيات</h3><div class="org">مشاريع مستقلة ومتنوعة</div><div class="date">2020 - حتى الآن</div><ul><li>تصميم وبرمجة أكثر من 50 مشروع طلابي في مراحل تعليمية مختلفة</li><li>تطوير حلول أتمتة ذكية للمختبرات والمشاريع الأكاديمية</li><li>حل مشاكل تقنية وفنية متقدمة في أنظمة العتاد والبرمجيات</li><li>بناء أنظمة IoT متكاملة مع واجهات ويب تفاعلية</li></ul></div>
-<div class="exp-item fade-in"><div class="tag"><i class="fas fa-graduation-cap"></i> شهادة أكاديمية</div><h3>ماجستير هندسة علوم الحاسب</h3><div class="org">Coventry University - المملكة المتحدة</div><div class="date">جامعة كوفنتري البريطانية</div><ul><li>تخصص في هندسة علوم الحاسب الآلي</li><li>بحث في مجالات الأنظمة المدمجة والتحكم الذكي</li></ul></div>
+<div class="exp-item fade-in"><div class="tag"><i class="fas fa-briefcase"></i> <span data-i18n="exp1_tag">خبرة عملية</span></div><h3 data-i18n="exp1_title">مطور أنظمة مدمجة وهندسة برمجيات</h3><div class="org" data-i18n="exp1_org">مشاريع مستقلة ومتنوعة</div><div class="date" data-i18n="exp1_date">2020 - حتى الآن</div><ul><li data-i18n="exp1_li1">تصميم وبرمجة أكثر من 50 مشروع طلابي في مراحل تعليمية مختلفة</li><li data-i18n="exp1_li2">تطوير حلول أتمتة ذكية للمختبرات والمشاريع الأكاديمية</li><li data-i18n="exp1_li3">حل مشاكل تقنية وفنية متقدمة في أنظمة العتاد والبرمجيات</li><li data-i18n="exp1_li4">بناء أنظمة IoT متكاملة مع واجهات ويب تفاعلية</li></ul></div>
+<div class="exp-item fade-in"><div class="tag"><i class="fas fa-graduation-cap"></i> <span data-i18n="exp2_tag">شهادة أكاديمية</span></div><h3 data-i18n="exp2_title">ماجستير هندسة علوم الحاسب</h3><div class="org" data-i18n="exp2_org">جامعة كوفنتري البريطانية</div><div class="date" data-i18n="exp2_date">Coventry University - المملكة المتحدة</div><ul><li data-i18n="exp2_li1">تخصص في هندسة علوم الحاسب الآلي</li><li data-i18n="exp2_li2">بحث في مجالات الأنظمة المدمجة والتحكم الذكي</li></ul></div>
 </div></div></section>
 
 <section id="contact"><div class="container">
 <div class="section-header fade-in">
-<div class="section-tag"><i class="fas fa-paper-plane"></i> التواصل</div>
-<h2 class="section-title">تواصل <span class="gradient-text">معي</span></h2>
-<p class="section-sub">لا تتردد في التواصل معي لأي استفسار أو تعاون</p>
+<div class="section-tag"><i class="fas fa-paper-plane"></i> <span data-i18n="contact_tag">التواصل</span></div>
+<h2 class="section-title"><span data-i18n="contact_title_1">تواصل</span> <span class="gradient-text" data-i18n="contact_title_2">معي</span></h2>
+<p class="section-sub" data-i18n="contact_sub">لا تتردد في التواصل معي لأي استفسار أو تعاون</p>
 </div>
 <div class="contact-grid">
-<div class="contact-card fade-in"><div class="contact-icon"><i class="fas fa-envelope"></i></div><h3>البريد الإلكتروني</h3><p><a href="mailto:ahmed4050@gmail.com">ahmed4050@gmail.com</a></p></div>
+<div class="contact-card fade-in"><div class="contact-icon"><i class="fas fa-envelope"></i></div><h3 data-i18n="contact_email">البريد الإلكتروني</h3><p><a href="mailto:ahmed4050@gmail.com">ahmed4050@gmail.com</a></p></div>
 <div class="contact-card fade-in"><div class="contact-icon"><i class="fab fa-github"></i></div><h3>GitHub</h3><p><a href="https://github.com/ahmed4050" target="_blank">ahmed4050</a></p></div>
 <div class="contact-card fade-in"><div class="contact-icon"><i class="fab fa-linkedin"></i></div><h3>LinkedIn</h3><p><a href="https://linkedin.com" target="_blank">LinkedIn Profile</a></p></div>
 </div></div></section>
 
-<footer><div class="container"><p>جميع الحقوق محفوظة 2026 - أحمد محمد القصابي</p></div></footer>
+<footer><div class="container"><p data-i18n="footer">جميع الحقوق محفوظة 2026 - أحمد محمد القصابي</p></div></footer>
 <script>
+var translations={
+ar:{
+nav_home:"الرئيسية",nav_skills:"المهارات",nav_projects:"المشاريع",nav_experience:"الخبرة",nav_contact:"التواصل",
+hero_badge:"متاح للعمل",hero_name:'أحمد <span class="gradient-text">القصابي</span>',hero_subtitle:"مطور أنظمة مدمجة وهندسة برمجيات",hero_desc:"متخصص في دمج العتاد بالبرمجيات، تطوير أنظمة التحكم الذكية، وأتمتة الحلول التقنية. خريج جامعة كوفنتري البريطانية - ماجستير هندسة علوم الحاسب.",hero_btn_contact:"تواصل معي",hero_btn_cv:"تحميل السيرة الذاتية",
+stat_projects:"مشروع مكتمل",stat_years:"سنوات خبرة",stat_degree:"ماجستير هندسة",
+skills_tag:"المهارات",skills_title_1:"المهارات",skills_title_2:"والتقنيات",skills_sub:"مجموعة متنوعة من المهارات التقنية المكتسبة عبر التعليم والخبرة العملية",
+skill1_title:"الأنظمة المدمجة والإلكترونيات",skill2_title:"البرمجيات وتطوير الحلول",skill3_title:"أتمتة الأعمال وقواعد البيانات",
+projects_tag:"المشاريع",projects_title_1:"معرض",projects_title_2:"المشاريع",projects_sub:"مشاريع حقيقية في الأنظمة المدمجة والويب",
+proj1_title:"نظام حجوزات المختبر",proj1_desc:"نظام ذكي لحجز المختبرات يعتمد على Google Sheets كقاعدة بيانات مع واجهة تفاعلية ومتابعة الحصص في الوقت الفعلي.",proj_view:"عرض مباشر",
+proj2_title:"سيارة ESP32 بكاميرا WiFi",proj2_desc:"روبوت سيارة مع كاميرا WiFi للتحكم عن بُعد عبر واجهة ويب مع بث مباشر للفيديو.",
+proj3_title:"سيارة ESP32 ذكية ACEBOTT",proj3_desc:"سيارة مدعومة بـ ESP32 مع تتبع مسار، مستشعر مسافة، تحكم عبر WebSocket، ولوحة تحكم تفاعلية.",
+proj4_title:"محدد اتجاه القبلة",proj4_desc:"تطبيق ويب لتحديد اتجاه القبلة بدقة باستخدام GPS و compass API مع واجهة عربية.",
+proj5_title:"مجمع الأخبار",proj5_desc:"موقع ويب يجمع الأخبار من مصادر RSS متعددة ويعرضها بتصميم عصري مع فلترة حسب التصنيف.",
+proj6_title:"موقع أخبار بالذكاء الاصطناعي",proj6_desc:"منصة أخبار تستخدم الذكاء الاصطناعي لتصنيف وعرض المحتوى بتصميم تفاعلي.",
+proj7_title:"متتبع مكعب 3D",proj7_desc:"تتبع مكعب ثلاثي الأبعاد في الوقت الفعلي باستخدام مستشعر 6-DOF على M5StickC Plus2.",
+exp_tag:"الخبرة",exp_title_1:"الخبرة",exp_title_2:"والتعليم",
+exp1_tag:"خبرة عملية",exp1_title:"مطور أنظمة مدمجة وهندسة برمجيات",exp1_org:"مشاريع مستقلة ومتنوعة",exp1_date:"2020 - حتى الآن",exp1_li1:"تصميم وبرمجة أكثر من 50 مشروع طلابي في مراحل تعليمية مختلفة",exp1_li2:"تطوير حلول أتمتة ذكية للمختبرات والمشاريع الأكاديمية",exp1_li3:"حل مشاكل تقنية وفنية متقدمة في أنظمة العتاد والبرمجيات",exp1_li4:"بناء أنظمة IoT متكاملة مع واجهات ويب تفاعلية",
+exp2_tag:"شهادة أكاديمية",exp2_title:"ماجستير هندسة علوم الحاسب",exp2_org:"جامعة كوفنتري البريطانية",exp2_date:"Coventry University - المملكة المتحدة",exp2_li1:"تخصص في هندسة علوم الحاسب الآلي",exp2_li2:"بحث في مجالات الأنظمة المدمجة والتحكم الذكي",
+contact_tag:"التواصل",contact_title_1:"تواصل",contact_title_2:"معي",contact_sub:"لا تتردد في التواصل معي لأي استفسار أو تعاون",contact_email:"البريد الإلكتروني",
+footer:"جميع الحقوق محفوظة 2026 - أحمد محمد القصابي"
+},
+en:{
+nav_home:"Home",nav_skills:"Skills",nav_projects:"Projects",nav_experience:"Experience",nav_contact:"Contact",
+hero_badge:"Available for Work",hero_name:'Ahmed <span class="gradient-text">Alqassabi</span>',hero_subtitle:"Embedded Systems & Software Engineer",hero_desc:"Specialized in hardware-software integration, smart control systems, and technical solutions automation. Graduate of Coventry University UK - MSc Computer Engineering.",hero_btn_contact:"Contact Me",hero_btn_cv:"Download CV",
+stat_projects:"Completed Projects",stat_years:"Years Experience",stat_degree:"MSc Engineering",
+skills_tag:"Skills",skills_title_1:"Skills &",skills_title_2:"Technologies",skills_sub:"A diverse set of technical skills gained through education and practical experience",
+skill1_title:"Embedded Systems & Electronics",skill2_title:"Software & Solution Development",skill3_title:"Business Automation & Databases",
+projects_tag:"Projects",projects_title_1:"Project",projects_title_2:"Portfolio",projects_sub:"Real projects in embedded systems and web development",
+proj1_title:"Lab Booking System",proj1_desc:"Smart lab booking system using Google Sheets as database with interactive interface and real-time session tracking.",proj_view:"Live Demo",
+proj2_title:"ESP32 WiFi Camera Car",proj2_desc:"Robot car with WiFi camera for remote control via web interface with live video streaming.",
+proj3_title:"ESP32 Smart Car ACEBOTT",proj3_desc:"ESP32-powered car with line tracking, distance sensor, WebSocket control, and interactive dashboard.",
+proj4_title:"Qibla Direction Finder",proj4_desc:"Web app to determine Qibla direction accurately using GPS and compass API with Arabic interface.",
+proj5_title:"News Aggregator",proj5_desc:"Website that aggregates news from multiple RSS sources with modern design and category filtering.",
+proj6_title:"AI News Website",proj6_desc:"News platform using AI to classify and display content with interactive design.",
+proj7_title:"3D Cube Tracker",proj7_desc:"Real-time 3D cube tracking using 6-DOF sensor on M5StickC Plus2.",
+exp_tag:"Experience",exp_title_1:"Experience &",exp_title_2:"Education",
+exp1_tag:"Work Experience",exp1_title:"Embedded Systems & Software Engineer",exp1_org:"Independent & Diverse Projects",exp1_date:"2020 - Present",exp1_li1:"Designed and developed 50+ student projects across various educational stages",exp1_li2:"Developed smart automation solutions for labs and academic projects",exp1_li3:"Solved advanced technical and engineering problems in hardware and software systems",exp1_li4:"Built integrated IoT systems with interactive web interfaces",
+exp2_tag:"Academic Degree",exp2_title:"MSc Computer Engineering",exp2_org:"Coventry University UK",exp2_date:"Coventry University - United Kingdom",exp2_li1:"Specialization in Computer Engineering",exp2_li2:"Research in embedded systems and intelligent control",
+contact_tag:"Contact",contact_title_1:"Get in",contact_title_2:"Touch",contact_sub:"Feel free to contact me for any inquiries or collaboration",contact_email:"Email",
+footer:"All Rights Reserved 2026 - Ahmed Mohammed Alqassabi"
+}
+};
+var currentLang=localStorage.getItem('lang')||'ar';
+function setLang(lang){
+currentLang=lang;
+var t=translations[lang];
+document.querySelectorAll('[data-i18n]').forEach(function(el){
+var key=el.getAttribute('data-i18n');
+if(t[key])el.innerHTML=t[key];
+});
+if(lang==='en'){
+document.documentElement.setAttribute('dir','ltr');
+document.documentElement.setAttribute('lang','en');
+document.body.classList.add('lang-en');
+document.getElementById('langLabel').textContent='عربي';
+}else{
+document.documentElement.setAttribute('dir','rtl');
+document.documentElement.setAttribute('lang','ar');
+document.body.classList.remove('lang-en');
+document.getElementById('langLabel').textContent='EN';
+}
+localStorage.setItem('lang',lang);
+}
+function toggleLang(){setLang(currentLang==='ar'?'en':'ar');}
 document.addEventListener('DOMContentLoaded',function(){
+setLang(currentLang);
 var navbar=document.getElementById('navbar');
 var hamburger=document.getElementById('hamburger');
 var navLinks=document.getElementById('navLinks');
