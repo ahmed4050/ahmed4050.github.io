@@ -26,3 +26,4 @@ Personal portfolio website showcasing my projects and skills in embedded systems
 - **News Aggregator** - [GitHub](https://github.com/ahmed4050/news-aggregator)
 - **AI News Website** - [GitHub](https://github.com/ahmed4050/ai-news-website)
 - **3D Cube Tracker** - [GitHub](https://github.com/ahmed4050/M5StickC-Plus2-6DOF-3D-Cube-Tracker)
+- **Windows System Cleaner Pro** - [GitHub](https://github.com/ahmed4050/SystemCleanerPro)
