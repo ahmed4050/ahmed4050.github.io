@@ -178,10 +178,8 @@ footer{text-align:center;padding:30px;border-top:1px solid var(--brd);color:var(
 </div></div></section>
 
 <footer><div class="container">
-<div style="display:flex;justify-content:center;align-items:center;gap:15px;margin-bottom:15px;flex-wrap:wrap">
-<a href="https://www.hitwebcounter.com" target="_blank" style="text-decoration:none">
-<img src="https://c.hitwebcounter.com/tab/322063875/0/48a37f6d/0/" alt="Visitor Counter" style="border:0;">
-</a>
+<div style="text-align:center;margin-bottom:15px">
+<span style="color:var(--t3);font-size:.85rem">👁️ <span id="visitorCount">0</span> <span data-i18n="footer_visitors">زيارة</span></span>
 </div>
 <p data-i18n="footer">جميع الحقوق محفوظة 2026 - أحمد محمد القصابي</p>
 </div></footer>
@@ -206,7 +204,8 @@ exp_tag:"الخبرة",exp_title_1:"الخبرة",exp_title_2:"والتعليم"
 exp1_tag:"خبرة عملية",exp1_title:"مطور أنظمة مدمجة وهندسة برمجيات",exp1_org:"مشاريع مستقلة ومتنوعة",exp1_date:"2020 - حتى الآن",exp1_li1:"تصميم وبرمجة أكثر من 50 مشروع طلابي في مراحل تعليمية مختلفة",exp1_li2:"تطوير حلول أتمتة ذكية للمختبرات والمشاريع الأكاديمية",exp1_li3:"حل مشاكل تقنية وفنية متقدمة في أنظمة العتاد والبرمجيات",exp1_li4:"بناء أنظمة IoT متكاملة مع واجهات ويب تفاعلية",
 exp2_tag:"شهادة أكاديمية",exp2_title:"بكالوريس هندسة الإلكترونيات",exp2_org:"جامعة كالدونيان الهندسية",exp2_date:"Glasgow Caledonian University - المملكة المتحدة",exp2_li1:"تخصص في هندسة الإلكترونيات والأنظمة المدمجة",exp2_li2:"بحث في مجالات الأنظمة المدمجة والتحكم الذكي",
 contact_tag:"التواصل",contact_title_1:"تواصل",contact_title_2:"معي",contact_sub:"لا تتردد في التواصل معي لأي استفسار أو تعاون",contact_email:"البريد الإلكتروني",contact_phone:"رقم الهاتف",
-footer:"جميع الحقوق محفوظة 2026 - أحمد محمد القصابي"
+footer:"جميع الحقوق محفوظة 2026 - أحمد محمد القصابي",
+footer_visitors:"زيارة",
 },
 en:{
 nav_home:"Home",nav_skills:"Skills",nav_projects:"Projects",nav_experience:"Experience",nav_contact:"Contact",
@@ -227,7 +226,8 @@ exp_tag:"Experience",exp_title_1:"Experience &",exp_title_2:"Education",
 exp1_tag:"Work Experience",exp1_title:"Embedded Systems & Software Engineer",exp1_org:"Independent & Diverse Projects",exp1_date:"2020 - Present",exp1_li1:"Designed and developed 50+ student projects across various educational stages",exp1_li2:"Developed smart automation solutions for labs and academic projects",exp1_li3:"Solved advanced technical and engineering problems in hardware and software systems",exp1_li4:"Built integrated IoT systems with interactive web interfaces",
 exp2_tag:"Academic Degree",exp2_title:"BEng Electronics Engineering",exp2_org:"Glasgow Caledonian University",exp2_date:"Glasgow Caledonian University - United Kingdom",exp2_li1:"Specialization in Electronics Engineering & Embedded Systems",exp2_li2:"Research in embedded systems and intelligent control",
 contact_tag:"Contact",contact_title_1:"Get in",contact_title_2:"Touch",contact_sub:"Feel free to contact me for any inquiries or collaboration",contact_email:"Email",contact_phone:"Phone",
-footer:"All Rights Reserved 2026 - Ahmed Mohammed Alqassabi"
+footer:"All Rights Reserved 2026 - Ahmed Mohammed Alqassabi",
+footer_visitors:"visits",
 }
 };
 var currentLang=localStorage.getItem('lang')||'ar';
@@ -264,6 +264,10 @@ var obs=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isInters
 document.querySelectorAll('.fade-in').forEach(function(el){obs.observe(el);});
 var cobs=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){var el=x.target;var t=+el.getAttribute('data-target');var c=0;var step=Math.ceil(t/50);var iv=setInterval(function(){c+=step;if(c>=t){c=t;clearInterval(iv);}el.textContent=c;},30);cobs.unobserve(el);}});},{threshold:0.5});
 document.querySelectorAll('.stat-number').forEach(function(el){cobs.observe(el);});
+// Visitor counter
+var visits=parseInt(localStorage.getItem('site_visits')||'0')+1;
+localStorage.setItem('site_visits',visits);
+document.getElementById('visitorCount').textContent=visits;
 });
 </script>
 </body>
